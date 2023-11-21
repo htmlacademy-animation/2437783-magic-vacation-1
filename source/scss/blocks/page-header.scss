@@ -264,18 +264,35 @@
         background-color: $c-dark;
       }
     }
-
+    &::before {
+      content: "";
+      transition-property: width;
+      transition-duration: 300ms;
+      transition-timing-function: linear;
+      width: 0%;
+      height: 2px;
+      background: $c-purple;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      opacity: 0;
+    }
     &.active {
       &::after {
         display: block;
       }
+      
     }
 
     &:hover,
     &:focus {
       color: $c-purple;
       outline: none;
-
+      &:hover::before {
+        width: 100%;
+        opacity: 1;
+      }
       &::after {
         opacity: 1;
         background-color: $c-purple;
