@@ -1,12 +1,32 @@
 .social-block {
   position: relative;
-
+  .social-block__list {
+    li {
+      opacity: 0;
+      &:nth-child(1) {
+        transition-property: opacity;
+        transition-delay: 50ms;
+      }
+      &:nth-child(2) {
+        transition-property: opacity;
+        transition-delay: 100ms;
+      }
+      &:nth-child(3) {
+        transition-property: opacity;
+        transition-delay: 150ms;
+      }
+    }
+  }
   &:hover {
     .social-block__list {
       opacity: 1;
       pointer-events: auto;
+      li{
+        opacity: 1;
+      }
     }
   }
+  
 }
 
 .social-block__toggler {
