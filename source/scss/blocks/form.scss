@@ -2,6 +2,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 
 .form__label {
@@ -30,10 +31,20 @@
 }
 
 .form__field {
+  @keyframes form {
+    from{
+      width: calc(20% - 21rem);
+    }
+    to{
+      width: calc(100% - 21rem);
+    }
+  }
   flex: none;
   margin-right: 3rem;
   padding: 0 5.6rem;
   height: 6rem;
+  transition: width 1s ease-in-out;
+  animation: form 2s;
   width: calc(100% - 21rem);
   text-transform: uppercase;
   font: inherit;
@@ -79,8 +90,7 @@
 }
 
 .form__button {
-  flex-grow: 1;
-
+  flex-grow: 0;
   @media (orientation: portrait) {
     position: relative;
     flex: none;
