@@ -32,15 +32,15 @@
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     animation: fadeInUp 1s;
 }
-.swiper-slide-next{
+.swiper-slide-next {
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     animation: fadeInLeft 1s;
-  }
-  
-.swiper-slide-active{
+}
+
+.swiper-slide-active {
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
     animation: fadeInLeft 1s;
-  }
+}
 
 // form animation scale
 .form {
@@ -58,7 +58,6 @@
 // header link animation
 .page-header__menu {
     a {
-        
         &::before {
             content: "";
             transition-property: transform;
@@ -77,60 +76,59 @@
         &:hover::before {
             transform: scale(1);
             transform-origin: left;
-
         }
     }
 }
 // menu button link
-.social-block__list{
-    li{
-        opacity: 0  ;
+.social-block__list {
+    li {
+        opacity: 0;
     }
-
 }
-.visble1{
+.visble1 {
     opacity: 1 !important;
     transition-duration: 1s;
     transition: opacity 0.5s ease-in-out;
 }
-.visble2{
+.visble2 {
     opacity: 1 !important;
     transition-duration: 2s;
     transition: opacity 1s ease-in-out;
 }
-.visble3{
+.visble3 {
     opacity: 1 !important;
     transition-duration: 3s;
     transition: opacity 1.5s ease-in-out;
 }
 // footer animation
-.screen__footer{
+.screen__footer {
     bottom: -15%;
 }
-.animation_footer{
-   bottom: 0;
-   transition: bottom 1s cubic-bezier(0,.78,.2,.91);
+.animation_footer {
+    bottom: 0;
+    transition: bottom 1s cubic-bezier(0, 0.78, 0.2, 0.91);
 }
 // logo animation
 
-.page-header__logo{
+.page-header__logo {
     left: -5%;
     opacity: 0;
 }
-.animation_logo{
+.animation_logo {
     left: 0;
     opacity: 1;
-    transition: left 1s cubic-bezier(0,.78,.2,.91), opacity 1.5s ease-out;
+    transition: left 1s cubic-bezier(0, 0.78, 0.2, 0.91), opacity 1.5s ease-out;
 }
-.page-header__nav{
+// nav animation
+.page-header__nav {
     position: relative;
     left: -5%;
     opacity: 0;
 }
-.page-header-nav_animation{
+.page-header-nav_animation {
     left: 0;
     opacity: 1;
-    transition: left 1s cubic-bezier(0,.78,.2,.91), opacity 1.5s ease-out 0.3s;
+    transition: left 1s cubic-bezier(0, 0.78, 0.2, 0.91), opacity 1.5s ease-out 0.3s;
 }
 
 // btn sotial block animation
@@ -138,10 +136,42 @@
     width: 0%;
     height: 0%;
     opacity: 0;
-    transition: all 1s cubic-bezier(0,.78,0,.99) 0.7s;
+    transition: all 1s cubic-bezier(0, 0.78, 0, 0.99) 0.7s;
 }
 .social-block_animation::before {
     width: 100%;
     height: 100%;
     opacity: 1;
+}
+
+// module 5
+
+.section_prizes_preload {    
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: #5f458c;
+    transform: translateY(100%);
+    transition: transform 1s, z-index cubic-bezier(1,0,1,-0.03);
+    z-index: 2;
+    transition: transform 1s;
+    
+    top: 0;
+    // #5f458c
+}
+@keyframes preload {
+    from {
+        z-index: 2;
+    }
+    to {
+        z-index: 1;
+    }
+}
+
+
+.pre_active {
+    transform: translateY(0%);
+    z-index: 1;
+    transition: transform 1s;
+    animation: preload 1.3s ease-in;
 }
