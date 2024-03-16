@@ -146,16 +146,16 @@
 
 // module 5
 
-.section_prizes_preload {    
+.section_prizes_preload {
     height: 100%;
     width: 100%;
     position: absolute;
     background-color: #5f458c;
     transform: translateY(100%);
-    transition: transform 1s, z-index cubic-bezier(1,0,1,-0.03);
+    transition: transform 1s, z-index cubic-bezier(1, 0, 1, -0.03);
     z-index: 2;
     transition: transform 1s;
-    
+
     top: 0;
     // #5f458c
 }
@@ -167,11 +167,23 @@
         z-index: 1;
     }
 }
-
+@keyframes preloadToPrizes {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}   
 
 .pre_active {
     transform: translateY(0%);
     z-index: 1;
     transition: transform 1s;
     animation: preload 1.3s ease-in;
+}
+.screen--prizes {
+    opacity: 1;
+    transition: transform 1s;
+    animation: preloadToPrizes 1.5s cubic-bezier(1,.01,.85,.02);
 }
