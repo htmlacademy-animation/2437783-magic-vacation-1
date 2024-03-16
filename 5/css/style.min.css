@@ -4253,11 +4253,25 @@ img {
     z-index: 1;
   }
 }
+@keyframes preloadToPrizes {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .pre_active {
   transform: translateY(0%);
   z-index: 1;
   transition: transform 1s;
   animation: preload 1.3s ease-in;
+}
+
+.screen--prizes {
+  opacity: 1;
+  transition: transform 1s;
+  animation: preloadToPrizes 1.5s cubic-bezier(1, 0.01, 0.85, 0.02);
 }
 
 /*# sourceMappingURL=style.min.css.map*/
